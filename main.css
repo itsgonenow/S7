@@ -1,0 +1,259 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Primary Colors*/
+
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+
+    /*Neutral Colors*/
+
+    --White: hsl(0, 0%, 100%);
+    --Slightly-transparent-white1: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white2: hsla(0, 0%, 100%, 0.6);
+}
+
+
+/* Screen reader class to hide the content visually */
+.sr-only {
+    position: absolute !important;
+    margin: -1px !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    padding: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--Very-dark-blue);
+}
+
+
+/*Mobile Design*/
+
+
+
+/*Container Positioning & Styling*/
+
+main {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.card {
+    max-width: 20rem;
+    background-color: var(--Dark-desaturated-blue);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    border-radius: 0.5rem;
+    margin: 5rem auto;
+}
+
+.image-container {
+
+    position: relative;
+}
+
+.info-container {
+    max-width: 16.5rem;
+    text-align: center;
+}
+
+.card ul {
+    list-style: none;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/*Images*/
+
+
+.office-image {
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.image-container::after {
+    content: "";
+    background-color: rgba(105, 19, 159, 0.598);
+    width: 100%;
+    height: 98.5%;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.office-image2 {
+    display: none;
+}
+
+/*Text Styling*/
+
+
+h2 {
+    margin-top: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: white;
+}
+
+p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--Slightly-transparent-white1);
+    line-height: 1.5rem;
+}
+
+.insights {
+    color: var(--Soft-violet)
+}
+
+.li-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: white;
+
+}
+
+.li-text {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--Slightly-transparent-white2);
+    text-transform: uppercase;
+}
+
+
+
+/*Desktop Media Quereies*/
+
+
+@media (min-width: 900px) {
+
+
+    /*Positioning*/
+
+    .card {
+        max-width: 60rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        height: fit-content;
+        padding: 0;
+        border-radius: 0.5rem;
+    }
+
+    .info-container {
+        grid-row: 1 / 2;
+        max-width: 70%;
+        margin-top: -7rem;
+        margin-left: 4rem;
+        text-align: start;
+    }
+
+
+    .stat-container {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        max-width: 100%;
+        margin-top: -12rem;
+        margin-left: 4rem;
+    }
+
+    /*Text Styling*/
+
+    .info-container p {
+        font-size: 0.8rem;
+    }
+
+    li {
+        text-align: start;
+    }
+
+
+    .li-number {
+        font-size: 1.3rem;
+    }
+
+    .li-text {
+        font-size: 0.6rem;
+    }
+
+    /*Images*/
+
+    .office-image {
+        display: none;
+    }
+
+    .office-image2 {
+        display: block;
+        width: 100%;
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+
+    .image-container::after {
+        height: 100%;
+        border-radius: 0 0.5rem 0.5rem 0;
+
+    }
+}
+
+@media (max-width: 280px) {
+    html {
+        font-size: 80%
+    }
+}
+
+/*Attribution styling*/
+
+.attribution {
+    width: 100vh;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(40%);
+    margin-bottom: 1rem;
+    color: white;
+
+}
+
+.attribution a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: pink;
+}
+
+@Media (max-width: 900px) {
+    .attribution {
+        display: none;
+    }
+}
